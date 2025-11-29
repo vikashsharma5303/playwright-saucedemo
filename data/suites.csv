@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2380","Smoke - add first item to cart and proceed","","Sat Nov 29 07:23:08 UTC 2025","passed","Sat Nov 29 07:23:10 UTC 2025","","smoke/add-to-cart.spec.js","",""
+"","2594","Regression - complete checkout flow","","Sat Nov 29 07:23:08 UTC 2025","passed","Sat Nov 29 07:23:10 UTC 2025","","regression/checkout.spec.js","",""
+"","763","Smoke - valid login","","Sat Nov 29 07:23:10 UTC 2025","passed","Sat Nov 29 07:23:11 UTC 2025","","smoke/login.spec.js","",""

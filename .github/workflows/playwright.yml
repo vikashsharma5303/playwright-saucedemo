@@ -8,17 +8,30 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-      - run: npx playwright install --with-deps
-      - run: npx playwright test --reporter=list
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline --unsafe-perm=true
+
+      - name: Run Playwright tests (Allure enabled)
+        run: npx playwright test
+
       - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: ./allure-results
+          path: allure-results
+          if-no-files-found: warn
